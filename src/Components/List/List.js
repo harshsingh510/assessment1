@@ -3,11 +3,20 @@ import React from 'react'
 import './List.css'
 import Card from '../Card/Card'
 
-let cardCount = 0;
+// let cardCount = 0;
 
 export default function List(props) {
+    const cardCount = props.ticketDetails.reduce((count, ticket) => {
+        if (ticket.status === props.listTitle ||
+            ticket.priority === props.listTitle ||
+            ticket.userObj.name === props.listTitle) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
     return (
         <>
+
             <div className="list-container">
                 <div className="list-header">
                     <div className="list-header-left">
@@ -94,22 +103,22 @@ export default function List(props) {
                     {
                         props.ticketDetails.map(ticket => {
                             if (ticket.status === props.listTitle) {
-                                cardCount++;
+                                // cardCount++;
                                 return (<Card cardDetails={ticket}
                                     groupValue={props.groupValue} />)
                             }
                             else if (ticket.priority === props.listTitle) {
-                                cardCount++;
+                                // cardCount++;
                                 return (<Card cardDetails={ticket}
                                     groupValue={props.groupValue} />)
                             }
                             else if (ticket.userObj.name === props.listTitle) {
-                                cardCount++;
+                                // cardCount++;
                                 return (<Card cardDetails={ticket}
                                     groupValue={props.groupValue} />)
                             }
                             return null
-                        }, cardCount = 0)
+                        })
 
                     }
                 </div>
