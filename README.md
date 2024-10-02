@@ -5,12 +5,12 @@ To run the Kanban board application locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sagarchauhan015/kanban-board.git
+   (https://github.com/harshsingh510/assessment1.git)
    ```
 
 2. Navigate to the project directory:
     ```bash
-    cd kanban-board
+    cd assessment1
     ```
 
 3. Install the required dependencies:
