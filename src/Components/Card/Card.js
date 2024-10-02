@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.css'
 export default function Card(props) {
     return (
@@ -6,7 +6,7 @@ export default function Card(props) {
             <div className="card-container">
                 <div className="card-id-wrapper">
                     <div className="card-id">{props.cardDetails.id}</div>
-                    {props.groupValue != 'user' && (
+                    {props.groupValue !== 'user' && (
                         <div className="card-profile">
                             <div className="card-profile-initial">{props.cardDetails.userObj.name[0]}{props.cardDetails.userObj.name[1]}</div>
                             <div className={props.cardDetails.userObj.available ? "card-profile-initial-available card-profile-initial-available-true" : "card-profile-initial-available"}></div>
@@ -14,7 +14,7 @@ export default function Card(props) {
                     )}
                 </div>
                 <div className="card-title">
-                    {props.groupValue != 'status' &&
+                    {props.groupValue !== 'status' &&
                         {
                             'Backlog': <div className="card-title-icon">
                                 <img src='/icons_FEtask/Backlog.svg' alt="icon" />
@@ -37,7 +37,7 @@ export default function Card(props) {
                     {props.cardDetails.title}
                 </div>
                 <div className="card-tag">
-                    {props.groupValue != 'priority' &&
+                    {props.groupValue !== 'priority' &&
                         {
                             0: <div className="card-tag-icon"><img src='/icons_FEtask/No-priority.svg' alt="icon" /></div>,
                             1: <div className="card-tag-icon"><img src='/icons_FEtask/Img - Low Priority.svg' alt="icon" /></div>,

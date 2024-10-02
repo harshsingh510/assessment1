@@ -58,7 +58,7 @@ function App() {
     async function refactorData(response) {
       let ticketArray = []
       let userNames = []
-      let statuses = []
+      // let statuses = []
       if (response.status === 200) {
         for (let i = 0; i < response.data.tickets.length; i++) {
           for (let j = 0; j < response.data.users.length; j++) {
@@ -69,7 +69,7 @@ function App() {
           }
         }
         userNames = response.data.users.map(user => user.name);
-        statuses = [...new Set(response.data.tickets.map(ticket => ticket.status))];
+        // statuses = [...new Set(response.data.tickets.map(ticket => ticket.status))];
 
       }
       setticketDetails(ticketArray)
